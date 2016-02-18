@@ -1,10 +1,9 @@
-# insidesearch-playground
+# nb-web
 
 ##Prerequisites
 The generated project has dependencies that require Node 4 and angular-cli
 
 ##Usage
-Inside insidesearch-playground-webapp
 ```bash
 mvn spring-boot:run
 ```
@@ -13,7 +12,7 @@ mvn spring-boot:run
 Or if you want live reload server for development
 
 ```bash
-cd insidesearch-playground-webapp/src/main/resources/insidesearch-playground
+cd src/main/resources/nb-web
 npm install
 ng build
 ng serve

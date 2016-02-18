@@ -9,12 +9,12 @@
 		<version>Angel.SR6</version>
 	</parent>
 
-	<groupId>no.nb.web</groupId>
-	<artifactId>nb-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>nb-web</name>
-	<description>www.nb.no</description>
+    <name>nb-web</name>
+    <description>www.nb.no</description>
+    <groupId>no.nb.web</groupId>
+    <artifactId>nb-web</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
 	<properties>
 		<start-class>no.nb.web.Application</start-class>
@@ -46,6 +46,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -66,14 +70,15 @@
 	</dependencies>
 
 	<scm>
-		<url>https://github.com/NationalLibraryOfNorway/nb-web.git</url>
-		<connection>scm:git:git://github.com/NationalLibraryOfNorway/nb-web.git</connection>
-		<developerConnection>scm:git:git@github.com:NationalLibraryOfNorway/nb-web.git</developerConnection>
+		<url>https://github.com/NationalLibraryOfNorway/${project.name}.git</url>
+		<connection>scm:git:git://github.com/NationalLibraryOfNorway/${project.name}.git</connection>
+		<developerConnection>scm:git:git@github.com:NationalLibraryOfNorway/${project.name}.git</developerConnection>
 	</scm>
 
 	<build>
-		<finalName>nb-web</finalName>
-		<pluginManagement>
+		<finalName>${project.name}</finalName>
+        <defaultGoal>spring-boot:run</defaultGoal>
+        <pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.jacoco</groupId>
@@ -90,8 +95,8 @@
 				</includes>
 			</resource>
 			<resource>
-				<directory>src/main/resources/web/nb-web/dist</directory>
-				<targetPath>nb-web/dist/</targetPath>
+				<directory>src/main/resources/${project.name}/dist</directory>
+				<targetPath>${project.name}/dist/</targetPath>
 			</resource>
 		</resources>
 		<plugins>
@@ -133,11 +138,11 @@
 				<configuration>
 					<filesets>
 						<fileset>
-							<directory>src/main/resources/nb-web/dist</directory>
+							<directory>src/main/resources/${project.name}/dist</directory>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
 						<fileset>
-							<directory>src/main/resources/nb-web/node_modules</directory>
+							<directory>src/main/resources/${project.name}/node_modules</directory>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
 					</filesets>
@@ -155,7 +160,7 @@
                             <arguments>
                                 <argument>install</argument>
                             </arguments>
-                            <workingDirectory>src/main/resources/web/nb-web</workingDirectory>
+                            <workingDirectory>src/main/resources/${project.name}</workingDirectory>
                         </configuration>
                         <goals>
                             <goal>exec</goal>
@@ -169,7 +174,7 @@
 							<arguments>
 								<argument>build</argument>
 							</arguments>
-							<workingDirectory>src/main/resources/web/nb-web</workingDirectory>
+							<workingDirectory>src/main/resources/${project.name}</workingDirectory>
 						</configuration>
 						<goals>
 							<goal>exec</goal>
