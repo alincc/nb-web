@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class StaticResourceConfiguration extends WebMvcConfigurerAdapter {
 
     private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
-            "classpath:/np-web/dist/" };
+            "classpath:/nb-web/dist/" };
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
