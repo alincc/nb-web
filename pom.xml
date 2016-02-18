@@ -95,7 +95,7 @@
 				</includes>
 			</resource>
 			<resource>
-				<directory>src/main/resources/${project.name}/dist</directory>
+				<directory>src/main/resources/web/dist</directory>
 				<targetPath>${project.name}/dist/</targetPath>
 			</resource>
 		</resources>
@@ -138,11 +138,11 @@
 				<configuration>
 					<filesets>
 						<fileset>
-							<directory>src/main/resources/${project.name}/dist</directory>
+							<directory>src/main/resources/web/dist</directory>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
 						<fileset>
-							<directory>src/main/resources/${project.name}/node_modules</directory>
+							<directory>src/main/resources/web/node_modules</directory>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
 					</filesets>
@@ -160,7 +160,7 @@
                             <arguments>
                                 <argument>install</argument>
                             </arguments>
-                            <workingDirectory>src/main/resources/${project.name}</workingDirectory>
+                            <workingDirectory>src/main/resources/web</workingDirectory>
                         </configuration>
                         <goals>
                             <goal>exec</goal>
@@ -174,7 +174,7 @@
 							<arguments>
 								<argument>build</argument>
 							</arguments>
-							<workingDirectory>src/main/resources/${project.name}</workingDirectory>
+							<workingDirectory>src/main/resources/web</workingDirectory>
 						</configuration>
 						<goals>
 							<goal>exec</goal>

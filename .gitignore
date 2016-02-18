@@ -3,5 +3,8 @@
 /.classpath
 /.project
 /.springBeans
-.idea/
+**/.idea/
 *.iml
+**/node_modules/
+**/dist/
+**/tmp/
