@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: nb-web
+  cloud:
+    config:
+      failFast: false
+      discovery:
+        enabled: true
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    config:
+      failFast: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
