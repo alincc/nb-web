@@ -33,7 +33,7 @@ function getCssTree(folder) {
 
         return scssFiles.map(fileName => {
             return compileSass(
-                [`${srcPath}/${component}`, 'src/core/style'], // Directories w/ scss sources
+                [`${srcPath}/${component}`, 'src/styles'], // Directories w/ scss sources
                 `./${fileName}.scss`,                              // Root scss input file
                 `${folder}/${component}/${fileName}.css`);        // Css output file
         }).concat(trees);
