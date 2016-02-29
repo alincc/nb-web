@@ -6,31 +6,8 @@ info:
 server:
   port: 7070
 
-
 zuul:
   routes:
     nb-api:
       path: /api/**
-      url: http://cp1.nb.no:8765/
-
----
-
-spring:
-  profiles: test
-
-zuul:
-routes:
-  nb-api:
-    path: /api/**
-    url: http://cp1.nb.no:8765/
-
----
-
-spring:
-  profiles: prod
-
-zuul:
-  routes:
-    nb-api:
-      path: /api/**
-      url: http://api.nb.no:8765/
+      url: http://localhost:8765/
